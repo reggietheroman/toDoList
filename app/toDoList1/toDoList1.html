@@ -1,0 +1,15 @@
+<div>
+<h3>To Do:</h3>
+<span>{{vm.countToDoRemaining()}} tasks of {{vm.toDoList.length}} left to do</span>
+<div ng-repeat="todo in vm.toDoList">
+  <input type="checkbox" ng-model="todo.done">
+  <span class="done-{{todo.done}}"> {{todo.task}}</span>
+  [<a href="" ng-click="vm.removeToDo($index)">remove</a>]
+  <br>
+</div>
+<form ng-submit="vm.addToDo()">
+  <br>
+  <input type="text" ng-model="vm.newToDo"  size="30" placeholder="add new todo here">
+  <input type="submit" value="add">
+</form>
+</div>
